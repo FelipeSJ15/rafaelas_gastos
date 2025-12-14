@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --background: #EFEFEA;
+  --foreground: #28493E;
+
+  /* Brand Palette */
+  --primary: #82284C;
+  --primary-foreground: #ffffff;
+
+  --secondary: #034EA1;
+  --secondary-foreground: #ffffff;
+
+  --muted: #dcdcd7;
+  --muted-foreground: #28493E;
+
+  --card: #ffffff;
+  --card-foreground: #28493E;
+
+  --border: #dcdcd7;
+}
+
+/* Force brand colors even in dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #EFEFEA;
+    --foreground: #28493E;
+    --card: #ffffff;
+    --card-foreground: #28493E;
+    --muted: #dcdcd7;
+    --muted-foreground: #28493E;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-border: var(--border);
+
+  --font-serif: var(--font-hepta), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-serif);
+}
+
+/* Ocultar indicador de desarrollo de Next.js (N) */
+[data-nextjs-dev-tools-root],
+[data-nextjs-toast],
+div[class*="nextjs-toast"] {
+  display: none !important;
+}
