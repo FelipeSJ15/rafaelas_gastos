@@ -40,7 +40,7 @@ export function CategoryList({ categorias, isAdmin }: CategoryListProps) {
                                     <Pencil className="w-4 h-4 text-gray-500" />
                                 </Button>
                             </Link>
-                            <form action={() => deleteCategory(cat.id)}>
+                            <form action={async () => { await deleteCategory(cat.id) }}>
                                 <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-red-600">
                                     <Trash2 className="w-4 h-4" />
                                 </Button>
@@ -65,7 +65,7 @@ export function CategoryList({ categorias, isAdmin }: CategoryListProps) {
                                                 <Pencil className="w-3 h-3 text-gray-500" />
                                             </Button>
                                         </Link>
-                                        <form action={() => deleteCategory(sub.id)}>
+                                        <form action={async () => { await deleteCategory(sub.id) }}>
                                             <Button variant="ghost" size="icon" className="h-7 w-7 hover:text-red-600">
                                                 <Trash2 className="w-3 h-3" />
                                             </Button>
